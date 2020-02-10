@@ -1,0 +1,28 @@
+<div class="chatBot col-12" style="height: 100vh;">
+    <h1 class="text-center">Angular Bot</h1>
+
+    <ng-container *ngFor="let message of messages | async" id="cont">
+
+        <div class="message pull-left" [ngClass]="{ 'from': message.sentBy === 'bot',
+        'to': message.sentBy === 'user'  }">
+            {{ message.content }}
+        </div>
+
+    </ng-container>
+
+    <div class="fixed-bottom bg-secondary p-2 text-center">
+        <!-- <input class="col-12 form-control" [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
+        <button (click)="sendMessage()"> Send </button> -->
+        <div class="input-group">
+            <input class="form-controlx-special/nautilus-clipboard
+            cut
+            file:///home/robot/Angular%20Project/angbot1/src/app/home
+            " form-control [(ngModel)]="formValue"
+             (keyup.enter)="sendMessage()" placeholder="Type your message.."
+                autocomplete="email"><span class="input-group-append">
+                <button class="btn btn-dark" (click)="sendMessage()"
+                type="button">Send</button></span>
+        </div>
+    </div>
+
+</div>
